@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+
+        <div class="card shadow-lg border-0 p-4">
+
+            <h3 class="text-center mb-4">🍽 Add New Recipe</h3>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Recipe Title</label>
+                    <input type="text" class="form-control" name="title" placeholder="Enter recipe name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="description" rows="3" placeholder="Write short description" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingredients</label>
+                    <textarea class="form-control" name="ingredients" rows="3" placeholder="Enter ingredients" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Upload Image</label>
+                    <input type="file" class="form-control" name="image" required>
+                </div>
+
+                <button class="btn btn-danger w-100">Add Recipe</button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

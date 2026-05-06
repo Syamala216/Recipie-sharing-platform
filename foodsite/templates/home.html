@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+{% for recipe in recipes %}
+
+<div class="col-md-3 mb-4">
+    <div class="card shadow">
+
+        <img src="{{ recipe.image.url }}" style="height:200px; object-fit:cover;">
+
+        <div class="card-body">
+            <h6>{{ recipe.title }}</h6>
+
+            <div class="d-flex justify-content-between">
+                <span class="rating">{{ recipe.rating }} ★</span>
+                <small>30 mins</small>
+            </div>
+
+            <p>{{ recipe.description|truncatewords:8 }}</p>
+        </div>
+
+    </div>
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
